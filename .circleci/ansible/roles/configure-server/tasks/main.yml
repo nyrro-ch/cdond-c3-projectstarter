@@ -14,12 +14,24 @@
   apt:
     autoremove: yes
 
-- name: "install dependencies python, nodejs and npm"
+- name: "install dependencies"
   become: yes
   apt:
-    name: ["nodejs", "npm", "python3"]
+    name: ["python3", "ansible-modules-pm2"]
     state: latest
     update_cache: yes
+
+- name: "download"
+  become: true
+  command: curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+  args:
+    chdir: /root
+
+- name: "upgrade"
+  become: true
+  command: apt-get install -y nodejs
+  args:
+    chdir: /root
 
 - name: "install pm2"
   become: yes
