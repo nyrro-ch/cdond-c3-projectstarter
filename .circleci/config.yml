@@ -363,7 +363,7 @@ jobs:
       - revert-migrations
       - destroy-environment
 
-cleanup:
+  cleanup:
     docker:
       - image: amazon/aws-cli
     steps:
