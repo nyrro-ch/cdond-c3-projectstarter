@@ -14,24 +14,18 @@
   apt:
     autoremove: yes
 
-- name: "install dependencies"
+- name: "install dependencies nodejs and npm"
+  become: yes
+  apt:
+    name: ["nodejs", "npm"]
+    update_cache: yes
+
+- name: "install python"
   become: yes
   apt:
     name: ["python3"]
     state: latest
     update_cache: yes
-
-- name: "download"
-  become: true
-  command: curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-  args:
-    chdir: /root
-
-- name: "upgrade"
-  become: true
-  command: apt-get install -y nodejs
-  args:
-    chdir: /root
 
 - name: "install pm2"
   become: yes
