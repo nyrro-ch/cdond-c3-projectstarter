@@ -1,2 +1,2 @@
 https://github.com/nyrro-ch/cdond-c3-projectstarter [URL01]
-http://udapeople-60ca12a.s3-website-us-east-1.amazonaws.com [URL02]
+http://udapeople-3802a65.s3-website-us-east-1.amazonaws.com [URL02]
